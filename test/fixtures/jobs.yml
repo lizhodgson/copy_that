@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  client_name: MyString
+  document_type: MyString
+  description: MyText
+  pay: 1
+  deadline: 2015-03-16 12:16:24
+  references: 
+
+two:
+  title: MyString
+  client_name: MyString
+  document_type: MyString
+  description: MyText
+  pay: 1
+  deadline: 2015-03-16 12:16:24
+  references: 
