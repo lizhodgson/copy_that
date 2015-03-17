@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   root 'welcome#index'
+
   get 'welcome/index'
+
 
   resources :jobs
   resources :job_applications
+  resources :users
 
 
 
