@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  get 'welcome/index'
-
+  get 'login' => 'sessions#new', as: 'login'
 
   resources :jobs
   resources :job_applications
   resources :users
+  resources :sessions
 
 
 
