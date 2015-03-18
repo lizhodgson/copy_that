@@ -4,17 +4,25 @@
 
 <%= form_for @user do |f| %>
 
-  <div class="field">
+  <p>
     <%= f.label :email %>
     <%= f.text_field :email %>
-  </div>
-  <div class="field">
+  </p>
+
+  <p>
     <%= f.label :password %>
     <%= f.password_field :password %>
-  </div>
-  <div class="field">
+  </p>
+
+  <p>
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions"><%= f.submit %></div>
+  </p>  
+  
+  <p>
+    <%= f.submit %>
+  </p>
 <% end %>
+
+<%= link_to 'Back', jobs_path %>
+

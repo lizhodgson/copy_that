@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   def new
     #just there to show the form
+    @user = User.new
   end
+
+  def edit
+  end  
 
   def create
     #accepts the form submission
