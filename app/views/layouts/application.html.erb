@@ -8,30 +8,7 @@
 </head>
 <body>
 
-<% if flash[:error] -%>
-  <p class='error'><%=h flash[:error] %></p>
-<% end -%>
-<% if flash[:notice] -%>
-  <p class='notice'><%=h flash[:notice] %></p>
-<% end -%>
-
-  <div id="nav">
-    <%= link_to 'home', root_path %>
-  </div>
-
-  <div id="nav">
-    <%= link_to 'mission statement', root_path %>
-  </div>
-
 <%= yield %>
 
-  <div class="userinfo">
-    <% if current_user %>
-      <p>Signed in as <%= current_user.email %>.</p>
-      <p><%= link_to "Log out", session_path("current"), :method => :delete %> </p>
-    <% else %>  
-      <%= link_to "Visit the Login Page", new_session_path %> or <%= link_to "Sign up", new_user_path%>
-     <% end %>
-  </div>    
 </body>
 </html>

@@ -11,42 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316191447) do
+ActiveRecord::Schema.define(version: 20150325203908) do
 
-  create_table "job_applications", force: :cascade do |t|
+  create_table "job_apps", force: :cascade do |t|
+    t.integer  "writer_id"
     t.integer  "job_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "job_applications", ["job_id"], name: "index_job_applications_on_job_id"
-  add_index "job_applications", ["user_id"], name: "index_job_applications_on_user_id"
+  add_index "job_apps", ["job_id"], name: "index_job_apps_on_job_id"
+  add_index "job_apps", ["user_id"], name: "index_job_apps_on_user_id"
 
   create_table "jobs", force: :cascade do |t|
-    t.string   "title"
-    t.string   "client_name"
+    t.string   "company_name"
     t.string   "document_type"
-    t.text     "description"
+    t.text     "document_description"
     t.integer  "pay"
-    t.datetime "deadline"
-    t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "need_by"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
-
-  add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.string   "email",            null: false
-    t.string   "crypted_password"
-    t.string   "salt"
-    #t.boolean  "is_client"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "avatar"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
